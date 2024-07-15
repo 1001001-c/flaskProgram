@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Step Inputs</title>
+</head>
+
+<body>
+    <h1>Step Inputs: {{ step.replace('_', ' ').title() }}</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        {% for field in form %}
+        <label for="{{ field.id }}">{{ field.label }}</label>
+        {{ field }}<br>
+        {% endfor %}
+        <input type="submit" value="Calculate">
+    </form>
+</body>
+
+</html>

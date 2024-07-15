@@ -1,0 +1,87 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #0056b3;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="submit"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form input[type="submit"] {
+    background-color: #0056b3;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #004494;
+}
+
+/* 特定页面样式 */
+#results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-item {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px;
+    width: 80%;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.result-item h2 {
+    margin-top: 0;
+}
+
+/* 表单样式 */
+form input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+form select {
+    padding: 8px;
+}
+
+/* CSRF Token 隐藏 */
+form input[name="csrf_token"] {
+    display: none;
+}

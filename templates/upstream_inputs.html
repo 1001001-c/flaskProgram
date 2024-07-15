@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Upstream Inputs</title>
+</head>
+
+<body>
+    <h1>Upstream Inputs</h1>
+    <form action="/calculate_upstream" method="post">
+        {{ form.hidden_tag() }}
+
+        <label for="volume_in">Upstream Volume (L):</label>
+        {{ form.volume_in }}<br>
+        <label for="mass_in">Upstream Mass (g):</label>
+        {{ form.mass_in }}<br>
+        {{ form.submit }}
+    </form>
+</body>
+
+</html>

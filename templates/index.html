@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Biopharma Project Input Form</title>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+</head>
+
+
+<body>
+    <h1>Biopharma Project Input Form</h1>
+    <form action="/select_steps" method="post">
+        {{ form.hidden_tag() }}
+        <h2>Select Steps</h2>
+        <ul id="sortable-list">
+            {% for module in modules %}
+            <li>
+                <input type="checkbox" id="{{ module }}" name="steps" value="{{ module }}">
+                <label for="{{ module }}">{{ module.replace('_', ' ').title() }}</label>
+            </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Next">
+    </form>
+
+    <script>
+        // 初始化Sortable.js
+        var sortable = new Sortable(document.getElementById('sortable-list'), {
+            animation: 150,
+            ghostClass: 'sortable-ghost'
+        });
+    </script>
+</body>
+
+</html>
